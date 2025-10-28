@@ -9,11 +9,11 @@ router.get("/", (req, res) => {
 })
 
 router.get("/about", (req, res) => {
-    res.render("about.ejs")
+    res.render("about.ejs", shopData)
 })
 
 router.get("/search", (req, res) => {
-    res.render("search.ejs")
+    res.render("search.ejs", shopData)
 })
 
 module.exports = router;

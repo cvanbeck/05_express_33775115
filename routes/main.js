@@ -16,4 +16,8 @@ router.get("/search", (req, res) => {
     res.render("search.ejs", shopData)
 })
 
+router.get("/search_result", (req, res) => {
+    res.send(req.query);
+})
+
 module.exports = router;

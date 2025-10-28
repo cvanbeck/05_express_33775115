@@ -9,4 +9,8 @@ router.get("/about", (req, res) => {
     res.render("about.ejs")
 })
 
+router.get("/search", (req, res) => {
+    res.render("search.ejs")
+})
+
 module.exports = router;

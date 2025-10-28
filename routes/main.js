@@ -1,8 +1,22 @@
 const express = require("express")
 const router = express.Router();
 const shopData = require("../config/shopData.json")
+const fs = require("fs")
 
 console.log(shopData)
+
+router.use((req, res, next) => {
+    // Logger
+    date = new Date().toLocaleString("en-gb")
+    fs.appendFile("./logs/requests.txt", `${date} \n    IP: ${req.ip} \n    Endpoint: ${req.originalUrl}\n \n`, err => {
+        if(err){
+            console.log("File failed to save")
+        } else {
+            console.log(`File saved at ${date}`)
+        }
+    })
+    next()
+})
 
 router.get("/", (req, res) => {
     res.render("index.ejs", shopData)

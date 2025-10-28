@@ -25,7 +25,7 @@ router.get("/register", (req, res) =>{
 })
 
 router.post("/registered", (req, res) => {
-    res.send(req.body)
+    res.send(`Hello ${req.body.first} ${req.body.last} you are now registered`)
 })
 
 module.exports = router;

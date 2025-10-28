@@ -1,0 +1,8 @@
+28/10/2025, 13:22:02 
+    IP: ::1 
+    Endpoint: /search_result?search_text=test&category=test1
+ 
+28/10/2025, 13:22:06 
+    IP: ::1 
+    Endpoint: /search_result?search_text=test&category=test1
+ 

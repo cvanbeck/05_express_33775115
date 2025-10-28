@@ -17,7 +17,7 @@ router.get("/search", (req, res) => {
 })
 
 router.get("/search_result", (req, res) => {
-    res.send(req.query);
+    res.send(`You searched for ${req.query.search_text} in ${req.query.category}`);
 })
 
 module.exports = router;

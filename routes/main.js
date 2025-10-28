@@ -1,8 +1,11 @@
 const express = require("express")
 const router = express.Router();
+const shopData = require("../config/shopData.json")
+
+console.log(shopData)
 
 router.get("/", (req, res) => {
-    res.render("index.ejs")
+    res.render("index.ejs", shopData)
 })
 
 router.get("/about", (req, res) => {

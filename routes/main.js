@@ -20,4 +20,12 @@ router.get("/search_result", (req, res) => {
     res.send(`You searched for ${req.query.search_text} in ${req.query.category}`);
 })
 
+router.get("/register", (req, res) =>{
+    res.render("register.ejs", shopData)
+})
+
+router.post("/registered", (req, res) => {
+    res.send(req.body)
+})
+
 module.exports = router;

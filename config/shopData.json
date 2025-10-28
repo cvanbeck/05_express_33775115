@@ -1,3 +1,4 @@
 {
-    "shopName":"Drinks R Us"
+    "shopName":"Drinks R Us",
+    "productCategories":["Beer", "Wine", "Soft Drinks", "Hot Drinks"]
 }

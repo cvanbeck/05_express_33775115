@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>This is the search page for <%=shopName%></h1>
-    <b>You have search for:</b>
+    <form action="/search-result" method="GET">
+        <input id="search_box" type="text" name="search_text">
+        <input type="submit" value="ok">
+    </form>
 </body>
 </html>

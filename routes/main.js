@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router();
 const shopData = require("../config/shopData.json")
+const shopLocations = require("../config/shopLocations.json")
 const fs = require("fs")
 
 console.log(shopData)
@@ -23,7 +24,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/about", (req, res) => {
-    res.render("about.ejs", shopData)
+    res.render("about.ejs", {shopData, shopLocations})
 })
 
 router.get("/search", (req, res) => {

@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router();
+const searchRouter = require("./search.js")
 const shopData = require("../config/shopData.json")
 const shopLocations = require("../config/shopLocations.json")
 const fs = require("fs")
@@ -26,9 +27,9 @@ router.get("/about", (req, res) => {
     res.render("about.ejs", {shopData, shopLocations})
 })
 
-router.get("/search", (req, res) => {
-    res.render("search.ejs", {shopData, shopLocations})
-})
+
+
+router.use("/" , searchRouter)
 
 router.get("/search_result", (req, res) => {
     res.send(`You searched for ${req.query.search_text} in ${req.query.category}`);

@@ -1,9 +1,12 @@
 const express = require("express")
+const fs = require("fs")
+// Routers
 const router = express.Router();
 const searchRouter = require("./search.js")
+const registerRouter = require("./register.js")
+// Data files
 const shopData = require("../config/shopData.json")
 const shopLocations = require("../config/shopLocations.json")
-const fs = require("fs")
 
 
 router.use((req, res, next) => {
@@ -27,20 +30,8 @@ router.get("/about", (req, res) => {
     res.render("about.ejs", {shopData, shopLocations})
 })
 
+router.use("/", searchRouter)
+router.use("/", registerRouter)
 
-
-router.use("/" , searchRouter)
-
-router.get("/search_result", (req, res) => {
-    res.send(`You searched for ${req.query.search_text} in ${req.query.category}`);
-})
-
-router.get("/register", (req, res) =>{
-    res.render("register.ejs", {shopData})
-})
-
-router.post("/registered", (req, res) => {
-    res.send(`Hello ${req.body.first} ${req.body.last} you are now registered, an email has been sent to ${req.body.email}`)
-})
 
 module.exports = router;

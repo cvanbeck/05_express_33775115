@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" type="text/css">
-
-    <title><%=shopName%></title>
-</head>
-<body>
-    <h1>This is the search page for <%=shopName%></h1>
+<%-include('header') %>
+    <h1>This is the search page for <%=shopData.shopName%></h1>
     <form action="/search_result" method="GET">
         Name: <input id="search_box" type="text" name="search_text">
         Category: <input type="text" name="category" id="search_box">
         <input type="submit" value="Go">
     </form>
-</body>
-</html>
+<%-include('footer') %>

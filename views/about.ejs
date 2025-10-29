@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=shopData.shopName%>></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" type="text/css">
-
-</head>
-<body>
-    <h1>About <%=shopData.shopName%></h1>
-    <p>We can be found at:</p>
-    <ul>
-        <% shopLocations.forEach((shop) => { %>
-            <li><%=shop.manager%> at <%=shop.location%></li>
-        <%}) %>
-    </ul>
-</body>
-</html>
+<%-include('header') %>
+<h1>About <%=shopData.shopName%></h1>
+<p>We can be found at:</p>
+<ul>
+    <% shopLocations.forEach((shop) => { %>
+        <li><%=shop.manager%> at <%=shop.location%></li>
+    <%}) %>
+</ul>
+<%-include('footer') %>

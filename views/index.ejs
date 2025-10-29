@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" type="text/css">
-
-    <title><%=shopName%></title>
-</head>
-<body>
-    <h1>Welcome to <%=shopName%> Shop</h1>
-    <h2>Here are some things that we sell:</h2>
-    <ul>
-        <% for(let i = 0; i < productCategories.length; i++){%>
-            <li><%=productCategories[i] %></li>
-        <% } %>
-    </ul>
-</body>
-</html>
+<%-include('header') %>
+<h1>Welcome to <%=shopData.shopName%> Shop</h1>
+<h2>Here are some things that we sell:</h2>
+<ul>
+    <% for(let i = 0; i < shopData.productCategories.length; i++){%>
+        <li><%=shopData.productCategories[i] %></li>
+    <% } %>
+</ul>
+<%-include('footer') %>

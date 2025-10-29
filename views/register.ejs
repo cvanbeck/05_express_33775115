@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" type="text/css">
-
-    <title><%=shopName%></title>
-</head>
+<%-include('header') %>
 <body>
     <h1>This is the register page</h1>
     <form action="/registered" method="POST">
@@ -15,5 +7,4 @@
         <li>Email: <input type="email" name="email" id="email"></li>
         <input type="submit" value="Ok"></li>
     </form>
-</body>
-</html>
+<%-include('footer') %>

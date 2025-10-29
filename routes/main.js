@@ -4,7 +4,6 @@ const shopData = require("../config/shopData.json")
 const shopLocations = require("../config/shopLocations.json")
 const fs = require("fs")
 
-console.log(shopData)
 
 router.use((req, res, next) => {
     // Logger
@@ -20,7 +19,7 @@ router.use((req, res, next) => {
 })
 
 router.get("/", (req, res) => {
-    res.render("index.ejs", shopData)
+    res.render("index.ejs", {shopData})
 })
 
 router.get("/about", (req, res) => {
@@ -28,7 +27,7 @@ router.get("/about", (req, res) => {
 })
 
 router.get("/search", (req, res) => {
-    res.render("search.ejs", shopData)
+    res.render("search.ejs", {shopData, shopLocations})
 })
 
 router.get("/search_result", (req, res) => {
@@ -36,7 +35,7 @@ router.get("/search_result", (req, res) => {
 })
 
 router.get("/register", (req, res) =>{
-    res.render("register.ejs", shopData)
+    res.render("register.ejs", {shopData})
 })
 
 router.post("/registered", (req, res) => {

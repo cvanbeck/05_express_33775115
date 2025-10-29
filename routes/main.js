@@ -7,20 +7,11 @@ const registerRouter = require("./register.js")
 // Data files
 const shopData = require("../config/shopData.json")
 const shopLocations = require("../config/shopLocations.json")
+//Utils
+const logger = require("../utils/logger.js")
 
 
-router.use((req, res, next) => {
-    // Logger
-    date = new Date().toLocaleString("en-gb")
-    fs.appendFile("./logs/requests.txt", `${date} \n    IP: ${req.ip} \n    Endpoint: ${req.originalUrl}\n \n`, err => {
-        if(err){
-            console.log("File failed to save")
-        } else {
-            console.log(`File saved at ${date}`)
-        }
-    })
-    next()
-})
+router.use(logger)
 
 router.get("/", (req, res) => {
     res.render("index.ejs", {shopData})

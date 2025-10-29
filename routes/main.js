@@ -1,5 +1,4 @@
 const express = require("express")
-const fs = require("fs")
 // Routers
 const router = express.Router();
 const searchRouter = require("./search.js")

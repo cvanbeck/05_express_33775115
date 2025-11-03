@@ -3,6 +3,7 @@ const express = require("express")
 const router = express.Router();
 const searchRouter = require("./search.js")
 const registerRouter = require("./register.js")
+const surveyRouter = require("./survey.js")
 // Data files
 const shopData = require("../config/shopData.json")
 const shopLocations = require("../config/shopLocations.json")

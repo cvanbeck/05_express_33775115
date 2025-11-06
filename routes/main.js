@@ -23,6 +23,6 @@ router.get("/about", (req, res) => {
 
 router.use("/", searchRouter)
 router.use("/", registerRouter)
-
+router.use("/", surveyRouter)
 
 module.exports = router;

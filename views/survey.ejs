@@ -1,3 +1,18 @@
 <%-include("header") %>
-
+<form action="/survey-complete" method="POST">
+    <li>First Name: <input type="text" id="first" name="first"></li>
+    <li>Last Name: <input type="text" id="last" name="last"></li>
+    <li>Email: <input type="email" name="email" id="email"></li>
+    <li>How old are you?: <input type="number" name="age" id="age"></li>
+    <li>Which of the following drinks categories is your favourite?
+        <% shopData.productCategories.forEach((drink) => { %>
+            <p>
+                <input type="radio" value="<%=drink %>" name="drinkChoice">
+                <%=drink %>
+            </p>
+        <%}) %>       
+    </li>
+    <li>Are you a student? <input type="checkbox" value="Yes" name="isStudent"></li>
+    <input type="submit" value="Ok"></li>
+</form>
 <%-include("footer")%>

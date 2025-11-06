@@ -6,6 +6,7 @@ surveyRouter.get("/survey", (req, res) => {
     res.render("survey.ejs", {shopData})
 })
 
+
 surveyRouter.post("/survey-complete", (req, res) => {
     res.render("survey-complete.ejs", {shopData, req})
 })
